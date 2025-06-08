@@ -17,14 +17,24 @@ A Model Context Protocol (MCP) server that provides browser testing capabilities
 
 ### Using npx (no installation required)
 
-You can use the MCP server directly with npx without installing it:
+You can use the MCP server directly with npx without installing it.
+
+#### Quick Setup with Claude CLI
+
+```bash
+claude mcp add laravel-dusk -- npx laravel-dusk-mcp@latest
+```
+
+#### Manual Configuration
+
+Add to your Claude Desktop configuration:
 
 ```json
 {
   "mcpServers": {
     "laravel-dusk": {
       "command": "npx",
-      "args": ["laravel-dusk-mcp"]
+      "args": ["laravel-dusk-mcp@latest"]
     }
   }
 }
@@ -70,7 +80,7 @@ Add the server to your Claude Desktop configuration file:
   "mcpServers": {
     "laravel-dusk": {
       "command": "npx",
-      "args": ["laravel-dusk-mcp"],
+      "args": ["laravel-dusk-mcp@latest"],
       "env": {
         "LARAVEL_PATH": "/path/to/your/laravel/project"
       }
@@ -102,14 +112,20 @@ The `LARAVEL_PATH` environment variable is optional. If not provided, the server
 
 ### Minimal Configuration
 
-For the simplest setup with npx:
+For the simplest setup:
 
+#### Using Claude CLI
+```bash
+claude mcp add laravel-dusk -- npx laravel-dusk-mcp@latest
+```
+
+#### Or manually:
 ```json
 {
   "mcpServers": {
     "laravel-dusk": {
       "command": "npx",
-      "args": ["laravel-dusk-mcp"]
+      "args": ["laravel-dusk-mcp@latest"]
     }
   }
 }
