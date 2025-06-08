@@ -17,7 +17,7 @@ A Model Context Protocol (MCP) server that provides browser testing capabilities
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/laravel-dusk-mcp.git
+git clone https://github.com/bm2ilabs/laravel-dusk-mcp.git
 cd laravel-dusk-mcp
 ```
 
