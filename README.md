@@ -15,6 +15,23 @@ A Model Context Protocol (MCP) server that provides browser testing capabilities
 
 ## Installation
 
+### Using npx (no installation required)
+
+You can use the MCP server directly with npx without installing it:
+
+```json
+{
+  "mcpServers": {
+    "laravel-dusk": {
+      "command": "npx",
+      "args": ["laravel-dusk-mcp"]
+    }
+  }
+}
+```
+
+### Local Installation
+
 1. Clone this repository:
 ```bash
 git clone https://github.com/bm2ilabs/laravel-dusk-mcp.git
@@ -31,6 +48,12 @@ npm install
 npm run build
 ```
 
+### Global Installation
+
+```bash
+npm install -g laravel-dusk-mcp
+```
+
 ## Usage
 
 ### With Claude Desktop
@@ -39,6 +62,24 @@ Add the server to your Claude Desktop configuration file:
 
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+#### Using npx (recommended)
+
+```json
+{
+  "mcpServers": {
+    "laravel-dusk": {
+      "command": "npx",
+      "args": ["laravel-dusk-mcp"],
+      "env": {
+        "LARAVEL_PATH": "/path/to/your/laravel/project"
+      }
+    }
+  }
+}
+```
+
+#### Using local installation
 
 ```json
 {
@@ -58,6 +99,23 @@ The `LARAVEL_PATH` environment variable is optional. If not provided, the server
 1. Check if the current directory is a Laravel project
 2. Search common locations for Laravel projects
 3. Allow you to set the project path using the `set_laravel_project` tool
+
+### Minimal Configuration
+
+For the simplest setup with npx:
+
+```json
+{
+  "mcpServers": {
+    "laravel-dusk": {
+      "command": "npx",
+      "args": ["laravel-dusk-mcp"]
+    }
+  }
+}
+```
+
+Then use the `set_laravel_project` tool to specify your Laravel project.
 
 ### Available Tools
 
